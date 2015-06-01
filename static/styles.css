@@ -1,0 +1,9 @@
+.cocktail-name {
+	font-size: 15px;
+	font-weight: bold;
+}
+
+.cocktail-label {
+	margin-right: 10px;
+	color: purple;
+}
