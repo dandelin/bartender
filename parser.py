@@ -1,8 +1,7 @@
 # -*- coding: utf-8 -*-
 
-from lxml import etree, html
-from bs4 import BeautifulSoup as bs
-import requests, json, chardet, os, codecs, itertools
+from lxml import html
+import json, os, codecs, itertools
 
 hs = [h for h in os.listdir('./htmls') if h.endswith('html')]
 
@@ -12,7 +11,7 @@ for h in hs:
 	par = html.fromstring(text)
 	img_src = [t.strip() for t in par.xpath("//img/@src")]
 	names = [t.strip() for t in par.xpath("//font[@size='5']/b/text()")]
-	desc_type = [t.strip() for t in par.xpath("//td[@align='left']/font/b/text()")]
+	desc_type = [t.strip()[:-1] for t in par.xpath("//td[@align='left']/font/b/text()")]
 	token = desc_type[0]
 	desc_desc = [t.strip() for t in par.xpath("//td[@align='left']/following-sibling::td/font/text()")]
 	descs = zip(desc_type, desc_desc)
