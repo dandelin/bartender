@@ -27,8 +27,8 @@ function drawtable(data){
         .attr('class', function(d){return d.name;});
 
     cocktails.each(function(d){
-        d3.select(this).append('img')
-            .attr('src', function(d){return "/static/" + d.img_src;});
+        //d3.select(this).append('img')
+        //    .attr('src', function(d){return "/static/" + d.img_src;});
 
         d3.select(this).append('p')
             .attr('class', 'cocktail-name')
